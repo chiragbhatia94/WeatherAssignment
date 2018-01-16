@@ -90,10 +90,10 @@ public class Weather {
                             if (yearWiseData.containsKey(i)) {
                                 if (k[j] != null) {
                                     csvLine = region + "," + correctedParameter(param) + "," + i + "," +
-                                            weatherHeaders.values()[j] + "," + k[j] + "\n";
+                                            WeatherHeaders.values()[j] + "," + k[j] + "\n";
                                 } else {
                                     csvLine = region + "," + correctedParameter(param) + "," + i + "," +
-                                            weatherHeaders.values()[j] + "," + "N/A" + "\n";
+                                            WeatherHeaders.values()[j] + "," + "N/A" + "\n";
                                 }
                                 // System.out.print(csvLine);
                                 outputStream.write(csvLine.getBytes());
@@ -126,7 +126,7 @@ public class Weather {
                                 if (cell.equals("---"))
                                     cell = "N/A";
                                 String csvLine = region + "," + correctedParameter(param) + "," + year + "," +
-                                        weatherHeaders.values()[i - 1] + "," + cell + "\n";
+                                        WeatherHeaders.values()[i - 1] + "," + cell + "\n";
                                 // System.out.println(csvLine);
                                 outputStream.write(csvLine.getBytes());
                             }
@@ -208,7 +208,7 @@ public class Weather {
         return null;
     }
 
-    private enum weatherHeaders {
+    private enum WeatherHeaders {
         JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC, WIN, SPR, SUM, AUT, ANN
     }
 }
